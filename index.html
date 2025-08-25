@@ -4,403 +4,355 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Imtiaj Iqbal Mahfuj - Portfolio</title>
-    <!-- Using Google Fonts for a professional look -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <!-- Using Tailwind CSS for all styling -->
+    <!-- Use Tailwind CSS for a responsive, modern design -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Use Font Awesome for social media icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <!-- Use a modern, clean font -->
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
         body {
-            font-family: 'Poppins', sans-serif;
-            @apply bg-gray-50 text-gray-800;
+            font-family: 'Inter', sans-serif;
+            background-color: #F8FAFC; /* A light grey/off-white background */
+            color: #1F2937; /* A dark grey for text */
         }
-        /* Custom styles to match the PDF layout and feel */
-        .hero-bg-card {
-            background: linear-gradient(180deg, rgba(255,255,255,0.7) 0%, rgba(255,255,255,0.9) 100%);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
+        .section-title {
+            font-weight: 800;
+            font-size: 2.5rem;
+            color: #111827; /* A deep dark grey */
+        }
+        .project-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        .navbar-link {
+            transition: color 0.2s ease;
+        }
+        .navbar-link:hover {
+            color: #5B21B6; /* A deep purple on hover */
         }
     </style>
 </head>
-<body class="antialiased">
+<body class="antialiased leading-relaxed">
 
     <!-- Header and Navigation -->
-    <header class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-sm shadow-md">
-        <nav class="container mx-auto flex items-center justify-between p-4 md:p-6">
-            <a href="#" class="text-xl md:text-2xl font-bold text-gray-900">Imtiaj.</a>
-            <div class="hidden md:flex items-center space-x-6 lg:space-x-8 text-lg font-medium">
-                <a href="#about" class="text-gray-600 hover:text-indigo-600 transition-colors duration-300">About me</a>
-                <a href="#projects" class="text-gray-600 hover:text-indigo-600 transition-colors duration-300">Projects</a>
-                <a href="#experience" class="text-gray-600 hover:text-indigo-600 transition-colors duration-300">Experience</a>
-                <a href="#publications" class="text-gray-600 hover:text-indigo-600 transition-colors duration-300">Publications</a>
-                <a href="#activities" class="text-gray-600 hover:text-indigo-600 transition-colors duration-300">Activities & Achievements</a>
-                <a href="#licenses" class="text-gray-600 hover:text-indigo-600 transition-colors duration-300">Licenses & Certifications</a>
-                <a href="https://www.linkedin.com/in/imtiajiqbalmahfuj" target="_blank" rel="noopener noreferrer" class="text-gray-600 hover:text-indigo-600 transition-colors duration-300">LinkedIn</a>
+    <header class="py-6 px-4 md:px-8 lg:px-16 sticky top-0 bg-white shadow-sm z-50">
+        <div class="container mx-auto flex items-center justify-between">
+            <a href="#" class="font-extrabold text-2xl text-purple-800">Imtiaj.</a>
+            <nav class="hidden md:flex space-x-8 lg:space-x-12">
+                <a href="#about-me" class="navbar-link text-gray-700 font-medium">About me</a>
+                <a href="#projects" class="navbar-link text-gray-700 font-medium">Projects</a>
+                <a href="#experience" class="navbar-link text-gray-700 font-medium">Experience</a>
+                <a href="#publications" class="navbar-link text-gray-700 font-medium">Publications</a>
+                <a href="#activities" class="navbar-link text-gray-700 font-medium">Activities & Achievements</a>
+                <a href="#licenses" class="navbar-link text-gray-700 font-medium">Licenses & Certifications</a>
+            </nav>
+            <div class="hidden md:flex space-x-4 items-center">
+                <a href="https://linkedin.com/in/imtiajiqbalmahfuj" target="_blank" class="text-gray-600 hover:text-purple-700 transition">
+                    <i class="fab fa-linkedin fa-lg"></i>
+                </a>
+                <a href="https://researchgate.net/" target="_blank" class="text-gray-600 hover:text-purple-700 transition">
+                    <i class="fab fa-researchgate fa-lg"></i>
+                </a>
+                <a href="mailto:imtiajiqbal.ruet@gmail.com" class="text-gray-600 hover:text-purple-700 transition">
+                    <i class="fas fa-envelope fa-lg"></i>
+                </a>
+                <a href="your_cv.pdf" download class="bg-purple-600 text-white px-5 py-2 rounded-lg font-semibold hover:bg-purple-700 transition">
+                    Download CV
+                </a>
             </div>
-            <!-- Mobile Menu Button -->
-            <button id="mobile-menu-btn" class="md:hidden text-gray-700 hover:text-indigo-600 focus:outline-none transition-colors duration-300">
-                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                </svg>
-            </button>
-        </nav>
-        <!-- Mobile Menu Dropdown -->
-        <div id="mobile-menu-links" class="hidden md:hidden bg-white shadow-lg border-t border-gray-200 py-2">
-            <a href="#about" class="block py-2 px-4 text-gray-800 hover:bg-gray-100 transition-colors duration-200">About me</a>
-            <a href="#projects" class="block py-2 px-4 text-gray-800 hover:bg-gray-100 transition-colors duration-200">Projects</a>
-            <a href="#experience" class="block py-2 px-4 text-gray-800 hover:bg-gray-100 transition-colors duration-200">Experience</a>
-            <a href="#publications" class="block py-2 px-4 text-gray-800 hover:bg-gray-100 transition-colors duration-200">Publications</a>
-            <a href="#activities" class="block py-2 px-4 text-gray-800 hover:bg-gray-100 transition-colors duration-200">Activities & Achievements</a>
-            <a href="#licenses" class="block py-2 px-4 text-gray-800 hover:bg-gray-100 transition-colors duration-200">Licenses & Certifications</a>
-            <a href="https://www.linkedin.com/in/imtiajiqbalmahfuj" target="_blank" rel="noopener noreferrer" class="block py-2 px-4 text-gray-800 hover:bg-gray-100 transition-colors duration-200">LinkedIn</a>
         </div>
     </header>
 
-    <main class="pt-24 md:pt-32">
+    <!-- Main Content -->
+    <main class="container mx-auto mt-12 md:mt-16 px-4 md:px-8 lg:px-16">
+
         <!-- Hero Section -->
-        <section id="hero" class="relative overflow-hidden py-16 md:py-24">
-            <div class="relative z-10 hero-bg-card container mx-auto px-4 py-16 md:py-24 rounded-3xl text-center">
-                <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-gray-900 leading-tight tracking-wide">
-                    IMTIAJ IQBAL MAHFUJ
-                </h1>
-                <p class="mt-4 text-xl md:text-2xl text-gray-600 font-medium">
-                    GIS & Remote Sensing Enthusiast | Research Maniac
-                </p>
-                <p class="text-xl md:text-2xl text-gray-600 font-medium">
-                    Geospatial Data Science Enthusiast (Python, ML)
-                </p>
-                <div class="mt-8 flex flex-wrap justify-center space-x-4">
-                    <a href="https://imtiajiqbalmahfuj.framer.website/CV%20(Imtiaj%20Iqbal%20Mahfuj%20-%20Academic).pdf" download class="group flex items-center justify-center px-6 py-3 border-2 border-black text-base font-medium rounded-full text-white bg-black hover:bg-gray-800 shadow-lg transition-transform transform hover:-translate-y-1 mt-2">
-                        Download CV
-                    </a>
-                    <a href="https://www.researchgate.net/profile/Imtiaj-Iqbal-Mahfuj" target="_blank" rel="noopener noreferrer" class="group flex items-center justify-center px-6 py-3 border-2 border-gray-300 text-base font-medium rounded-full text-gray-800 bg-white hover:bg-gray-100 transition-colors duration-300 mt-2">
-                        ResearchGate
-                    </a>
-                </div>
+        <section id="hero" class="mb-24 text-center">
+            <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold text-gray-900 leading-tight mb-4">
+                IMTIAJ IQBAL MAHFUJ
+            </h1>
+            <p class="text-xl sm:text-2xl text-gray-600 font-medium">
+                GIS & Remote Sensing Enthusiast | Research Maniac
+            </p>
+            <p class="text-lg text-gray-500 mt-2">
+                Geospatial Data Science Enthusiast (Python, ML)
+            </p>
+            <div class="mt-8">
+                <!-- Placeholder for the interactive map/image element -->
+                <img src="https://placehold.co/1200x600/E5E7EB/A1A5B4?text=Interactive+Map+Placeholder" alt="Interactive map of Bangladesh" class="w-full rounded-2xl shadow-xl">
             </div>
         </section>
-        
+
         <!-- About Me Section -->
-        <section id="about" class="py-16 md:py-24">
-            <div class="container mx-auto px-4">
-                <h2 class="text-3xl md:text-4xl font-extrabold text-center text-gray-900 mb-12">
-                    <span class="text-indigo-600">About me</span>
-                </h2>
-                <div class="w-full md:max-w-4xl mx-auto p-6 bg-white rounded-xl shadow-lg">
-                    <p class="text-base md:text-lg leading-relaxed text-gray-700">
+        <section id="about-me" class="my-24">
+            <div class="flex flex-col lg:flex-row items-center lg:space-x-16">
+                <div class="w-full lg:w-1/3 mb-8 lg:mb-0">
+                    <img src="https://placehold.co/400x400/D1D5DB/6B7280?text=Your+Professional+Photo" alt="Imtiaj Iqbal Mahfuj" class="rounded-2xl shadow-lg w-full">
+                </div>
+                <div class="w-full lg:w-2/3">
+                    <h2 class="section-title mb-6">About me</h2>
+                    <p class="text-lg text-gray-700 leading-relaxed mb-4">
                         I'm Imtiaj Iqbal Mahfuj, an undergraduate student of Urban and Regional Planning at Rajshahi University of Engineering & Technology (RUET), driven by a strong passion for Geographic Information Systems (GIS), Remote Sensing, Google Earth Engine (GEE), and Geospatial Data Science with Python and Machine Learning. My academic and professional journey is centered on leveraging spatial data and advanced analytical techniques to design resilient, efficient, and sustainable urban environments.
                     </p>
-                    <p class="mt-4 text-base md:text-lg leading-relaxed text-gray-700">
-                        My interest lies at the intersection of spatial data and real-world impact, exploring how geospatial intelligence can inform better decision-making in areas like urban planning, disaster risk reduction, environmental management, and transportation systems. My expertise is further strengthened by specializations and certifications from leading institutions and top universities, including IBM, Google, the University of Michigan, and others.
+                    <p class="text-lg text-gray-700 leading-relaxed">
+                        My interest lies at the intersection of spatial data and real-world impact, exploring how geospatial intelligence can inform better decision-making in areas like urban planning, disaster risk reduction, environmental management, and transportation systems. My expertise is further strengthened by specializations and certifications from leading institutions and top universities, including IBM, Google, and the University of Michigan. As a dedicated research enthusiast, I actively seek opportunities to dive deep into complex issues and produce actionable insights. My works have been featured in international conferences such as ICERIE and ICURP.
                     </p>
-                    <p class="mt-4 text-base md:text-lg leading-relaxed text-gray-700">
-                        As a dedicated research enthusiast, I actively seek opportunities to dive deep into complex issues and produce actionable insights. My works have been featured in international conferences such as ICERIE, ICURP and presented at events organized by the Bangladesh Institute of Planners (BIP). I believe research isn't just about publication—it's about solving problems, informing policy, and bridging the gap between data and people.
-                    </p>
-                    <div class="mt-8 text-center">
-                        <button onclick="window.location.href='#contact'" class="px-6 py-3 border-2 border-black text-base font-medium rounded-full text-white bg-black hover:bg-gray-800 shadow-lg transition-transform transform hover:-translate-y-1">
-                            Send me a message
-                        </button>
-                    </div>
                 </div>
             </div>
         </section>
 
         <!-- Education Section -->
-        <section id="education" class="py-16 md:py-24 bg-gray-100">
-            <div class="container mx-auto px-4">
-                <h2 class="text-3xl md:text-4xl font-extrabold text-center text-gray-900 mb-12">
-                    <span class="text-indigo-600">Education</span>
-                </h2>
-                <div class="w-full md:max-w-4xl mx-auto p-6 bg-white rounded-xl shadow-lg">
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <section id="education" class="my-24">
+            <h2 class="section-title mb-10">Education</h2>
+            <div class="space-y-12">
+                <div class="p-8 bg-white rounded-xl shadow-lg border border-gray-200">
+                    <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-4">
                         <div>
-                            <h3 class="font-semibold text-lg text-gray-800">Rajshahi University of Engineering & Technology</h3>
-                            <p class="text-gray-600">Bachelor of Urban & Regional Planning</p>
-                            <p class="text-sm text-gray-500">Dec 2022 - Present | CGPA: 3.78/4.00</p>
-                            <ul class="list-disc list-inside mt-2 text-sm text-gray-700 space-y-1">
-                                <li>Class Representative (CR)</li>
-                                <li>Research on Urban & Regional Planning, Transportation Planning, Environmental planning and Management, Disaster Management, GIS and Remote sensing, Surveying & Cartography, Social & Physical Survey, Urban Planning Studio, Landscape Planning, Civil & Architectural Drawing, Floor Planning, Plot Design, Participatory Rural Appraisal, Project Management and Evaluation</li>
-                                <li>Software: Skilled and huge work experience in MS Office package, ArcGIS, Erdas Imagine, SketchUp, Google Earth, SPSS, AMOS, Corel Draw, AutoCAD, Twinmotion.</li>
-                                <li>Language: Fluent in speaking, reading and writing English and Bengali languages.</li>
-                                <li>Executive Producer, TEDxRUET Empowering Imagination</li>
-                                <li>Assistant Graphics & Design Secretary, RUET GIS Club</li>
-                            </ul>
+                            <h3 class="text-2xl font-semibold text-gray-800">Rajshahi University of Engineering & Technology</h3>
+                            <p class="text-lg text-gray-600">Bachelor of Urban & Regional Planning</p>
                         </div>
-                        <div>
-                            <h3 class="font-semibold text-lg text-gray-800">St. Joseph Higher Secondary School</h3>
-                            <p class="text-gray-600">Higher Secondary Certificate</p>
-                            <p class="text-sm text-gray-500">Jun 2019 - Feb 2021 | CGPA: 5.00/5.00</p>
-                            <ul class="list-disc list-inside mt-2 text-sm text-gray-700 space-y-1">
-                                <li>Prefect (Class Representative)</li>
-                                <li>Corresponding Secretary at Josephite Math Club (JMC)</li>
-                                <li>Executive Member at Josephite Eco & Earth Club (JEEC)</li>
-                                <li>Organized Josephite Math Mania 2021</li>
-                            </ul>
+                        <div class="text-right mt-2 md:mt-0">
+                            <p class="text-gray-500">Dec 2022 - Present</p>
+                            <p class="text-gray-500">CGPA: 3.78/4.00</p>
                         </div>
                     </div>
+                    <ul class="list-disc list-inside text-gray-700 space-y-2">
+                        <li>Class Representative (CR)</li>
+                        <li>Research on Urban & Regional Planning, Transportation Planning, Environmental planning and Management, Disaster Management, GIS and Remote sensing, Surveying & Cartography, Social & Physical Survey, Urban Planning Studio, Landscape Planning, Civil & Architectural Drawing, Floor Planning, Plot Design, Participatory Rural Appraisal, Project Management and Evaluation.</li>
+                        <li>Software Skills: MS Office package, ArcGIS, Erdas Imagine, SketchUp, Google Earth, SPSS, AMOS, Corel Draw, AutoCAD, Twinmotion.</li>
+                    </ul>
+                </div>
+                <div class="p-8 bg-white rounded-xl shadow-lg border border-gray-200">
+                    <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-4">
+                        <div>
+                            <h3 class="text-2xl font-semibold text-gray-800">St. Joseph Higher Secondary School</h3>
+                            <p class="text-lg text-gray-600">Higher Secondary Certificate</p>
+                        </div>
+                        <div class="text-right mt-2 md:mt-0">
+                            <p class="text-gray-500">Jun 2019 - Feb 2021</p>
+                            <p class="text-gray-500">CGPA: 5.00/5.00</p>
+                        </div>
+                    </div>
+                    <ul class="list-disc list-inside text-gray-700 space-y-2">
+                        <li>Prefect (Class Representative)</li>
+                        <li>Corresponding Secretary at Josephite Math Club (JMC)</li>
+                        <li>Executive Member at Josephite Eco & Earth Club (JEEC)</li>
+                    </ul>
                 </div>
             </div>
         </section>
 
         <!-- Skills Section -->
-        <section id="skills" class="py-16 md:py-24">
-            <div class="container mx-auto px-4">
-                <h2 class="text-3xl md:text-4xl font-extrabold text-center text-gray-900 mb-12">
-                    <span class="text-indigo-600">Skills</span>
-                </h2>
-                <div class="w-full md:max-w-4xl mx-auto p-6 bg-white rounded-xl shadow-lg">
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                        <div>
-                            <h3 class="font-semibold text-lg text-gray-800">Hard Skills</h3>
-                            <ul class="list-disc list-inside mt-2 text-sm text-gray-700 space-y-1">
-                                <li>ArcGIS Pro</li>
-                                <li>Google Earth Engine</li>
-                                <li>Python</li>
-                                <li>AutoCAD</li>
-                                <li>ENVI</li>
-                                <li>MATLAB</li>
-                                <li>QGIS</li>
-                                <li>SPSS</li>
-                                <li>JavaScript</li>
-                                <li>Academic writing</li>
-                                <li>Microsoft Office</li>
-                                <li>Adobe CC</li>
-                                <li>Blender</li>
-                            </ul>
+        <section id="skills" class="my-24">
+            <h2 class="section-title mb-10">Skills</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                <div>
+                    <h3 class="text-2xl font-bold mb-4 text-gray-800">Hard Skills</h3>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="bg-gray-200 text-gray-800 font-medium px-4 py-2 rounded-full">ArcGIS Pro</span>
+                        <span class="bg-gray-200 text-gray-800 font-medium px-4 py-2 rounded-full">Google Earth Engine</span>
+                        <span class="bg-gray-200 text-gray-800 font-medium px-4 py-2 rounded-full">Python</span>
+                        <span class="bg-gray-200 text-gray-800 font-medium px-4 py-2 rounded-full">AutoCAD</span>
+                        <span class="bg-gray-200 text-gray-800 font-medium px-4 py-2 rounded-full">JavaScript</span>
+                        <span class="bg-gray-200 text-gray-800 font-medium px-4 py-2 rounded-full">Academic Writing</span>
+                        <span class="bg-gray-200 text-gray-800 font-medium px-4 py-2 rounded-full">Microsoft Office</span>
+                        <span class="bg-gray-200 text-gray-800 font-medium px-4 py-2 rounded-full">Adobe CC</span>
+                        <span class="bg-gray-200 text-gray-800 font-medium px-4 py-2 rounded-full">Blender</span>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-2xl font-bold mb-4 text-gray-800">Soft Skills</h3>
+                    <div class="grid grid-cols-1 gap-6">
+                        <div class="bg-white p-6 rounded-xl shadow-md border border-gray-200">
+                            <h4 class="text-xl font-semibold mb-2 text-gray-800">Leadership</h4>
+                            <p class="text-gray-600">I've led and organized several successful events and served as a Class Representative during my academic journey.</p>
                         </div>
-                        <div>
-                            <h3 class="font-semibold text-lg text-gray-800">Soft Skills</h3>
-                            <ul class="list-disc list-inside mt-2 text-sm text-gray-700 space-y-1">
-                                <li>Leadership</li>
-                                <li>Adaptability</li>
-                                <li>Time Management</li>
-                                <li>Problem solving</li>
-                                <li>Negotiation</li>
-                                <li>Team Management</li>
-                            </ul>
+                        <div class="bg-white p-6 rounded-xl shadow-md border border-gray-200">
+                            <h4 class="text-xl font-semibold mb-2 text-gray-800">Adaptability</h4>
+                            <p class="text-gray-600">I quickly adjust to changing circumstances and excel in dynamic environments that demand flexibility.</p>
+                        </div>
+                        <div class="bg-white p-6 rounded-xl shadow-md border border-gray-200">
+                            <h4 class="text-xl font-semibold mb-2 text-gray-800">Problem Solving</h4>
+                            <p class="text-gray-600">I approach challenges with a structured mindset, breaking them down to develop efficient and effective solutions.</p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-        
+
         <!-- Projects Section -->
-        <section id="projects" class="py-16 md:py-24 bg-gray-100">
-            <div class="container mx-auto px-4">
-                <h2 class="text-3xl md:text-4xl font-extrabold text-center text-gray-900 mb-12">
-                    <span class="text-indigo-600">Projects</span>
-                </h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <!-- Project 1 -->
-                    <div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden">
-                        <img src="https://placehold.co/600x400/e9d5ff/0c4a6e?text=Project+1" alt="Overlay of Tobacco Land" class="w-full h-56 object-cover">
-                        <div class="p-6">
-                            <h3 class="text-xl font-bold text-gray-900">Overlay of Tobacco Land 2024 on Soil Quality Index (SQI) 2024</h3>
-                            <p class="mt-2 text-gray-600 text-sm line-clamp-3">Aug 22, 2025</p>
-                            <div class="mt-4 flex space-x-3">
-                                <a href="#" class="bg-indigo-500 hover:bg-indigo-600 text-white font-medium py-2 px-4 rounded-full transition-colors duration-300 text-sm">
-                                    Live Demo
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Project 2 -->
-                    <div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden">
-                        <img src="https://placehold.co/600x400/93c5fd/1e3a8a?text=Project+2" alt="Tobacco Land Classification" class="w-full h-56 object-cover">
-                        <div class="p-6">
-                            <h3 class="text-xl font-bold text-gray-900">Tobacco Land Classification 2024</h3>
-                            <p class="mt-2 text-gray-600 text-sm line-clamp-3">Aug 22, 2025</p>
-                            <div class="mt-4 flex space-x-3">
-                                <a href="#" class="bg-indigo-500 hover:bg-indigo-600 text-white font-medium py-2 px-4 rounded-full transition-colors duration-300 text-sm">
-                                    Live Demo
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Project 3 -->
-                    <div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden">
-                        <img src="https://placehold.co/600x400/93fdd0/1e8a3a?text=Project+3" alt="Developing a Composite Soil Quality Index" class="w-full h-56 object-cover">
-                        <div class="p-6">
-                            <h3 class="text-xl font-bold text-gray-900">Developing a Composite Soil Quality Index (SQI) for Kushtia District (2024)</h3>
-                            <p class="mt-2 text-gray-600 text-sm line-clamp-3">Jul 22, 2025</p>
-                            <div class="mt-4 flex space-x-3">
-                                <a href="#" class="bg-indigo-500 hover:bg-indigo-600 text-white font-medium py-2 px-4 rounded-full transition-colors duration-300 text-sm">
-                                    Live Demo
-                                </a>
-                            </div>
-                        </div>
+        <section id="projects" class="my-24">
+            <h2 class="section-title mb-10">Projects</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project 1 -->
+                <div class="project-card bg-white rounded-xl shadow-lg border border-gray-200 overflow-hidden">
+                    <img src="https://placehold.co/600x400/ECEFF1/90A4AE?text=Project+Map+1" alt="Project 1" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <p class="text-sm text-gray-500 mb-2">Aug 22, 2025</p>
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Developing a Composite Soil Quality Index (SQI) for Kushtia District (2024)</h3>
+                        <a href="#" class="text-purple-600 font-medium hover:underline">View Project &rarr;</a>
                     </div>
                 </div>
-                <div class="mt-12 text-center">
-                    <a href="https://imtiajiqbalmahfuj.framer.website/projects" target="_blank" class="text-indigo-600 hover:underline font-medium">See all projects</a>
+                <!-- Project 2 -->
+                <div class="project-card bg-white rounded-xl shadow-lg border border-gray-200 overflow-hidden">
+                    <img src="https://placehold.co/600x400/ECEFF1/90A4AE?text=Project+Map+2" alt="Project 2" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <p class="text-sm text-gray-500 mb-2">Jul 22, 2025</p>
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Tobacco Crop Cultivation Mapping (2005, 2015, 2024) using Geospatial Python</h3>
+                        <a href="#" class="text-purple-600 font-medium hover:underline">View Project &rarr;</a>
+                    </div>
+                </div>
+                <!-- Project 3 -->
+                <div class="project-card bg-white rounded-xl shadow-lg border border-gray-200 overflow-hidden">
+                    <img src="https://placehold.co/600x400/ECEFF1/90A4AE?text=Project+Map+3" alt="Project 3" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <p class="text-sm text-gray-500 mb-2">May 20, 2025</p>
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Exploring River Morphology with Ease Using RiverREM</h3>
+                        <a href="#" class="text-purple-600 font-medium hover:underline">View Project &rarr;</a>
+                    </div>
                 </div>
             </div>
         </section>
 
         <!-- Experience Section -->
-        <section id="experience" class="py-16 md:py-24">
-            <div class="container mx-auto px-4">
-                <h2 class="text-3xl md:text-4xl font-extrabold text-center text-gray-900 mb-12">
-                    <span class="text-indigo-600">Project/Research Work Experience</span>
-                </h2>
-                <div class="w-full md:max-w-4xl mx-auto p-6 bg-white rounded-xl shadow-lg">
-                    <ul class="space-y-6">
-                        <li>
-                            <h3 class="font-semibold text-lg text-gray-800">Research Assistant</h3>
-                            <p class="text-gray-600">Director of Research and Extension (R&E), Rajshahi University of Engineering & Technology</p>
-                            <p class="text-sm text-gray-500">Feb 1, 2025 - Jun 28, 2025</p>
-                        </li>
-                        <li>
-                            <h3 class="font-semibold text-lg text-gray-800">Program Executive</h3>
-                            <p class="text-gray-600">Aeronautics & Space Applications division, Space and Environment Research Center (SERC)</p>
-                            <p class="text-sm text-gray-500">Mar 17, 2025 - Mar 22, 2026</p>
-                            <p class="mt-2 text-sm text-gray-700">Project: Developing Space-Based Integrated Disaster Management System in Asia and the Pacific</p>
-                            <p class="text-sm text-gray-700">Skills Required: Research and Development (R&D), Quantitative Research, Geological Mapping, Geography, Remote Sensing, Geographic Information Systems (GIS)</p>
-                        </li>
-                        <li>
-                            <h3 class="font-semibold text-lg text-gray-800">Undergraduate Research Assistant</h3>
-                            <p class="text-gray-600">Director of Research and Extension (R&E), Rajshahi University of Engineering & Technology</p>
-                            <p class="text-sm text-gray-500">Aug 13, 2024 - Mar 11, 2025</p>
-                            <p class="mt-2 text-sm text-gray-700">Project: A Participatory Approach to Develop Homestead Farming in Khirshan, Rajshahi</p>
-                        </li>
-                    </ul>
+        <section id="experience" class="my-24">
+            <h2 class="section-title mb-10">Experience</h2>
+            <div class="space-y-12">
+                <!-- Experience 1 -->
+                <div class="p-8 bg-white rounded-xl shadow-lg border border-gray-200">
+                    <div class="flex justify-between items-start mb-4">
+                        <div>
+                            <h3 class="text-2xl font-semibold text-gray-800">Research Assistant</h3>
+                            <p class="text-lg text-gray-600">Director of Research and Extension (R&E), RUET</p>
+                        </div>
+                        <p class="text-gray-500 text-right">Feb 1, 2025 - Jun 28, 2025</p>
+                    </div>
+                    <p class="text-gray-700">Project: Urban Fire Hazard Vulnerability in Focus: A Comprehensive Assessment of Rajshahi</p>
+                </div>
+                <!-- Experience 2 -->
+                <div class="p-8 bg-white rounded-xl shadow-lg border border-gray-200">
+                    <div class="flex justify-between items-start mb-4">
+                        <div>
+                            <h3 class="text-2xl font-semibold text-gray-800">Program Executive</h3>
+                            <p class="text-lg text-gray-600">Aeronautics & Space Applications division, SERC</p>
+                        </div>
+                        <p class="text-gray-500 text-right">Mar 17, 2025 - Mar 22, 2026</p>
+                    </div>
+                    <p class="text-gray-700">Project: Developing Space-Based Integrated Disaster Management System in Asia and the Pacific</p>
+                </div>
+                <!-- Experience 3 -->
+                <div class="p-8 bg-white rounded-xl shadow-lg border border-gray-200">
+                    <div class="flex justify-between items-start mb-4">
+                        <div>
+                            <h3 class="text-2xl font-semibold text-gray-800">Undergraduate Research Assistant</h3>
+                            <p class="text-lg text-gray-600">Director of Research and Extension (R&E), RUET</p>
+                        </div>
+                        <p class="text-gray-500 text-right">Aug 13, 2024 - Mar 11, 2025</p>
+                    </div>
+                    <p class="text-gray-700">Project: A Participatory Approach to Develop Homestead Farming in Khirshan, Rajshahi</p>
                 </div>
             </div>
         </section>
-        
+
         <!-- Publications Section -->
-        <section id="publications" class="py-16 md:py-24 bg-gray-100">
-            <div class="container mx-auto px-4">
-                <h2 class="text-3xl md:text-4xl font-extrabold text-center text-gray-900 mb-12">
-                    <span class="text-indigo-600">Publications</span>
-                </h2>
-                <div class="w-full md:max-w-4xl mx-auto p-6 bg-white rounded-xl shadow-lg">
-                    <ul class="space-y-6">
-                        <li>
-                            <h3 class="font-semibold text-lg text-gray-800">A Remote Sensing-Based Analysis of Nighttime Light Pollution and Its Regional Spillover Effects in Dhaka</h3>
-                            <p class="text-gray-600">Mahfuj, I. I., Tamim, N. F., Rashid, T., Hossain, M. S., Amin, M. A. A., & Hasan, M. M.</p>
-                            <p class="text-sm text-gray-500">8th International Conference on Engineering Research, Innovation and Education (ICERIE), 2025</p>
-                        </li>
-                        <li>
-                            <h3 class="font-semibold text-lg text-gray-800">Revolutionizing Waste Management in Rajshahi City Corporation: A Technological Solution for Enhanced Recycling and Community Engagement towards Zero Waste</h3>
-                            <p class="text-gray-600">Mahfuj, I. I., Tamim, N. F., Aziz, Z. A. B. A., Sarker, D., & Islam, M.</p>
-                            <p class="text-sm text-gray-500">8th International Conference on Engineering Research, Innovation and Education (ICERIE), 2025</p>
-                        </li>
-                    </ul>
+        <section id="publications" class="my-24">
+            <h2 class="section-title mb-10">Publications</h2>
+            <div class="space-y-8">
+                <!-- Publication 1 -->
+                <div class="p-8 bg-white rounded-xl shadow-lg border border-gray-200">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">A Remote Sensing-Based Analysis of Nighttime Light Pollution and Its Regional Spillover Effects in Dhaka</h3>
+                    <p class="text-gray-600 mb-2">Proceedings of the 8th International Conference on Engineering Research, Innovation and Education (ICERIE), 2025</p>
+                    <a href="#" class="text-purple-600 font-medium hover:underline">Link &rarr;</a>
+                </div>
+                <!-- Publication 2 -->
+                <div class="p-8 bg-white rounded-xl shadow-lg border border-gray-200">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Revolutionizing Waste Management in Rajshahi City Corporation</h3>
+                    <p class="text-gray-600 mb-2">Proceedings of the 8th International Conference on Engineering Research, Innovation and Education (ICERIE), 2025</p>
+                    <a href="#" class="text-purple-600 font-medium hover:underline">Link &rarr;</a>
                 </div>
             </div>
         </section>
 
         <!-- Activities & Achievements Section -->
-        <section id="activities" class="py-16 md:py-24">
-            <div class="container mx-auto px-4">
-                <h2 class="text-3xl md:text-4xl font-extrabold text-center text-gray-900 mb-12">
-                    <span class="text-indigo-600">Activities & Achievements</span>
-                </h2>
-                <div class="w-full md:max-w-4xl mx-auto p-6 bg-white rounded-xl shadow-lg">
-                    <ul class="space-y-6">
-                        <li>
-                            <h3 class="font-semibold text-lg text-gray-800">Awarded 2nd Place at "Youth's Thought in Sustainable Urban Planning - 2025"</h3>
-                            <p class="text-sm text-gray-500">Awarded by Urban Development Directorate (UDD), Ministry of Housing and Public Works, Bangladesh.</p>
-                            <p class="text-sm text-gray-500">May 29, 2025</p>
-                        </li>
-                        <li>
-                            <h3 class="font-semibold text-lg text-gray-800">General Secretary, RUET GIS Club</h3>
-                            <p class="text-sm text-gray-500">Jul 11, 2025 - Aug 11, 2025</p>
-                        </li>
-                        <li>
-                            <h3 class="font-semibold text-lg text-gray-800">Volunteer, Space and Environment Research Center (SERC)</h3>
-                            <p class="text-sm text-gray-500">Mar 10, 2025 - Mar 10, 2026</p>
-                        </li>
-                    </ul>
+        <section id="activities" class="my-24">
+            <h2 class="section-title mb-10">Activities & Achievements</h2>
+            <div class="space-y-8">
+                <!-- Activity 1 -->
+                <div class="p-8 bg-white rounded-xl shadow-lg border border-gray-200">
+                    <div class="flex justify-between items-start mb-4">
+                        <div>
+                            <h3 class="text-xl font-semibold text-gray-800">Volunteer</h3>
+                            <p class="text-lg text-gray-600">Space and Environment Research Center (SERC)</p>
+                        </div>
+                        <p class="text-gray-500 text-right">Mar 10, 2025 - Mar 10, 2026</p>
+                    </div>
+                    <p class="text-gray-700">Program Executive for the SERC Disaster Management Program.</p>
+                </div>
+                <!-- Achievement 1 -->
+                <div class="p-8 bg-white rounded-xl shadow-lg border border-gray-200">
+                    <div class="flex justify-between items-start mb-4">
+                        <div>
+                            <h3 class="text-xl font-semibold text-gray-800">Awarded 2nd Place</h3>
+                            <p class="text-lg text-gray-600">"Youth's Thought in Sustainable Urban Planning - 2025"</p>
+                        </div>
+                        <p class="text-gray-500 text-right">May 29, 2025</p>
+                    </div>
+                    <p class="text-gray-700">Awarded by Urban Development Directorate (UDD), Ministry of Housing and Public Work.</p>
                 </div>
             </div>
         </section>
 
         <!-- Licenses & Certifications Section -->
-        <section id="licenses" class="py-16 md:py-24 bg-gray-100">
-            <div class="container mx-auto px-4">
-                <h2 class="text-3xl md:text-4xl font-extrabold text-center text-gray-900 mb-12">
-                    <span class="text-indigo-600">Licenses & Certifications</span>
-                </h2>
-                <div class="w-full md:max-w-4xl mx-auto p-6 bg-white rounded-xl shadow-lg">
-                    <ul class="space-y-6">
-                        <li>
-                            <h3 class="font-semibold text-lg text-gray-800">Data Science Professional Certificate</h3>
-                            <p class="text-gray-600">IBM</p>
-                        </li>
-                        <li>
-                            <h3 class="font-semibold text-lg text-gray-800">Geospatial Data Science Certificate</h3>
-                            <p class="text-gray-600">Google</p>
-                        </li>
-                        <li>
-                            <h3 class="font-semibold text-lg text-gray-800">Python for Everybody Specialization</h3>
-                            <p class="text-gray-600">University of Michigan</p>
-                        </li>
-                        <li>
-                            <h3 class="font-semibold text-lg text-gray-800">Participant of workshop on "Elevate Your Insights: Drone Based Data Collection & Processing"</h3>
-                            <p class="text-gray-600">Department of Urban & Regional Planning, RUET & Tiller</p>
-                            <p class="text-sm text-gray-500">Dec 13, 2024</p>
-                        </li>
-                    </ul>
+        <section id="licenses" class="my-24">
+            <h2 class="section-title mb-10">Licenses & Certifications</h2>
+            <div class="space-y-8">
+                <!-- Certification 1 -->
+                <div class="p-8 bg-white rounded-xl shadow-lg border border-gray-200">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Participant of workshop on "Elevate Your Insights: Drone Based Data Collection & Processing"</h3>
+                    <p class="text-gray-600">Department of Urban & Regional Planning, RUET & Tiller</p>
+                    <p class="text-gray-500 mt-2">Dec 13, 2024</p>
+                </div>
+                <!-- Certification 2 -->
+                <div class="p-8 bg-white rounded-xl shadow-lg border border-gray-200">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Machine Learning with Python</h3>
+                    <p class="text-gray-600">Certified by: IBM (Coursera)</p>
+                    <p class="text-gray-500 mt-2">June 2025</p>
                 </div>
             </div>
         </section>
 
-        <!-- Contact Section -->
-        <section id="contact" class="py-16 md:py-24">
-            <div class="container mx-auto px-4">
-                <h2 class="text-3xl md:text-4xl font-extrabold text-center text-gray-900 mb-12">
-                    <span class="text-indigo-600">Contact Me</span>
-                </h2>
-                <div class="w-full md:max-w-2xl mx-auto p-6 bg-white rounded-xl shadow-lg text-center">
-                    <div class="flex flex-col md:flex-row justify-center items-center space-y-6 md:space-y-0 md:space-x-12">
-                        <div class="flex items-center space-x-3">
-                            <svg class="w-8 h-8 text-gray-600" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path>
-                                <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path>
-                            </svg>
-                            <p class="text-lg text-gray-800"><a href="mailto:imtiajiqbal.ruet@gmail.com">imtiajiqbal.ruet@gmail.com</a></p>
-                        </div>
-                        <div class="flex items-center space-x-3">
-                            <svg class="w-8 h-8 text-gray-600" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M16.3 3.6c.7-.7 1.8-.7 2.5 0s.7 1.8 0 2.5l-2.5 2.5c-.7.7-1.8.7-2.5 0s-.7-1.8 0-2.5l2.5-2.5zM3.6 16.3c-.7.7-1.8.7-2.5 0s-.7-1.8 0-2.5l2.5-2.5c.7-.7 1.8-.7 2.5 0s.7 1.8 0 2.5l-2.5 2.5z"></path>
-                                <path d="M12.586 4.586a2 2 0 112.828 2.828l-3 3a2 2 0 01-2.828 0 1 1 0 00-1.414 1.414 4 4 0 005.656 0l3-3a4 4 0 00-5.656-5.656l-1.5 1.5a1 1 0 001.414 1.414l1.5-1.5zm-5.656 8.828a2 2 0 11-2.828-2.828l3-3a2 2 0 012.828 0 1 1 0 001.414-1.414 4 4 0 00-5.656 0l-3 3a4 4 0 005.656 5.656l1.5-1.5a1 1 0 10-1.414-1.414l-1.5 1.5z" clip-rule="evenodd" fill-rule="evenodd"></path>
-                            </svg>
-                            <p class="text-lg text-gray-800"><a href="https://www.linkedin.com/in/imtiajiqbalmahfuj">LinkedIn</a></p>
-                        </div>
-                    </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-gray-300 py-12">
+        <div class="container mx-auto px-4 md:px-8 lg:px-16 flex flex-col md:flex-row justify-between items-center">
+            <div class="mb-6 md:mb-0 text-center md:text-left">
+                <p>&copy; 2025 Imtiaj Iqbal Mahfuj. All rights reserved.</p>
+                <div class="mt-2 text-sm">
+                    <a href="#" class="hover:underline">Privacy Policy</a> |
+                    <a href="#" class="hover:underline">Terms</a>
                 </div>
             </div>
-        </section>
-        
-    </main>
-    
-    <!-- Footer -->
-    <footer class="bg-gray-800 text-white py-6">
-        <div class="container mx-auto px-4 text-center text-sm text-gray-400">
-            <p>Copyright &copy; 2024 Imtiaj Iqbal Mahfuj. All Rights Reserved.</p>
+            <div class="flex space-x-6">
+                <a href="https://linkedin.com/in/imtiajiqbalmahfuj" target="_blank" class="text-gray-400 hover:text-white transition">
+                    <i class="fab fa-linkedin fa-2x"></i>
+                </a>
+                <a href="https://scholar.google.com/" target="_blank" class="text-gray-400 hover:text-white transition">
+                    <i class="fas fa-graduation-cap fa-2x"></i>
+                </a>
+                <a href="https://researchgate.net/" target="_blank" class="text-gray-400 hover:text-white transition">
+                    <i class="fab fa-researchgate fa-2x"></i>
+                </a>
+                <a href="https://www.facebook.com/" target="_blank" class="text-gray-400 hover:text-white transition">
+                    <i class="fab fa-facebook fa-2x"></i>
+                </a>
+            </div>
         </div>
     </footer>
 
-    <script>
-        // JavaScript for mobile menu toggle
-        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-        const mobileMenuLinks = document.getElementById('mobile-menu-links');
-
-        mobileMenuBtn.addEventListener('click', () => {
-            mobileMenuLinks.classList.toggle('hidden');
-        });
-
-        // Hide mobile menu when a link is clicked
-        const navLinks = document.querySelectorAll('#mobile-menu-links a');
-        navLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenuLinks.classList.add('hidden');
-            });
-        });
-    </script>
 </body>
 </html>
